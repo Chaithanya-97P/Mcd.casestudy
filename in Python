@@ -1,0 +1,24 @@
+import pandas as pd
+
+# Assuming the data is available in a CSV file named "winter_activities.csv"
+data = pd.read_csv("winter_activities.csv")
+
+# Calculate column means
+col_means = data.iloc[:, 1:].mean(axis=0) * 100  # Assuming data starts from column 1 (index 0)
+
+# Round the means to nearest integer
+rounded_means = col_means.round().astype(int)
+
+# Print the results
+print("alpine skiing  cross-country skiing  ski touring")
+print(rounded_means)
+
+print("\n260 12 Step 10: Evaluation and Monitoring")
+print("ice-skating     sleigh riding          hiking")
+print(rounded_means.iloc[4:])
+
+print("\nrelaxing          shopping       sight-seeing")
+print(rounded_means.iloc[8:])
+
+print("\nmuseums          pool/sauna")
+print(rounded_means.iloc[12:])
